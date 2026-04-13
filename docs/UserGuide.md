@@ -167,16 +167,16 @@ Recording your applications early helps you avoid losing track of follow-ups and
 ![Application](images/Application.png)
 <br><br>
 
-| Parameter    | Prefix | Required | Constraints                                                                                | Parameter Example |
-|--------------|--------|----------|--------------------------------------------------------------------------------------------|-----------------|
-| Company Name | `n/`   | Yes      | Printable characters only, must not start with a space                                     | `n/Google`      |
-| Role         | `r/`   | Yes      | Printable characters only, must not start with a space                                     | `r/SWE Intern`  |
-| Date         | `d/`   | Yes      | Must be a valid calendar date in `DD-MM-YYYY` format                                       | `d/15-03-2026`  |
-| Status       | `s/`   | Yes      | Must be `Offered`, `Pending`, or `Rejected` (case-insensitive)                             | `s/Pending` |
-| Email        | `e/`   | Optional | Must follow email format                                                                   | `e/hr@google.com` |
-| Website      | `w/`   | Optional | Must follow website format. `https://` will be added automatically if no protocol is given | `w/google.com`  |
-| Address      | `a/`   | Optional | Must not be blank (See warning for rare cases)                                             | `a/Singapore`   |
-| Tag          | `t/`   | Optional | Alphanumeric only, no spaces, max 20 characters                                            | `t/govtech` `t/fintech` |
+| Parameter    | Prefix | Required | Constraints                                                                                                    | Parameter Example       |
+|--------------|--------|----------|----------------------------------------------------------------------------------------------------------------|-------------------------|
+| Company Name | `n/`   | Yes      | Printable English characters only (letters, digits, symbols), starting/ending/duplicate spaces will be trimmed | `n/Google`              |
+| Role         | `r/`   | Yes      | Printable English characters only (letters, digits, symbols), starting/ending/duplicate spaces will be trimmed | `r/SWE Intern`          |
+| Date         | `d/`   | Yes      | Must be a valid calendar date in `DD-MM-YYYY` format                                                           | `d/15-03-2026`          |
+| Status       | `s/`   | Yes      | Must be `Offered`, `Pending`, or `Rejected` (case-insensitive)                                                 | `s/Pending`             |
+| Email        | `e/`   | Optional | If not left blank, must follow email format                                                                    | `e/hr@google.com`       |
+| Website      | `w/`   | Optional | If not left blank, must follow website format. `https://` will be added automatically if no protocol is given  | `w/google.com`          |
+| Address      | `a/`   | Optional | See [Command Format Notes](#command-format-notes) for Special Characters                                       | `a/Singapore`           |
+| Tag          | `t/`   | Optional | Alphanumeric only, no spaces, max 20 characters                                                                | `t/govtech` `t/fintech` |
 
 
 > ⚠ **Warning:** Two applications with the same `Company Name` and `Role` are not allowed. (Case-insensitive) 
@@ -211,21 +211,21 @@ Update an existing application in HireME. Use this when you need to update detai
 
 <br><br>
 
-| Parameter    | Prefix | Required | Constraints                                                              | Result                         |
-|--------------|--------|----------|--------------------------------------------------------------------------|--------------------------------|
-| Index        | —      | Yes      | Must be a positive integer and within the bounds of the current list     | Edits the position in the list |
-| Company Name | `n/`   | Optional | Cannot be empty                                                          | Updated company name           |
-| Role         | `r/`   | Optional | Cannot be empty                                                          | Updated job role               |
-| Date         | `d/`   | Optional | Must be a valid calendar date in `DD-MM-YYYY` format                     | Updated application date       |
-| Status       | `s/`   | Optional | Must be `Offered`, `Pending`, or `Rejected` (case-insensitive)           | Updated application status     |
-| Email        | `e/`   | Optional | Must follow email format, <br/>_Leave this blank to clear the field_     | Updated email                  |
-| Website      | `w/`   | Optional | Must follow website format, <br/>_Leave this blank to clear the field_   | Updated job link               |
-| Address      | `a/`   | Optional | _Leave this blank to clear the field_                                    | Updated company location       |
-| Tag          | `t/`   | Optional | Alphanumeric only, no spaces, <br/>_Leave this blank to clear the field_ | Replaces all existing tags     |
+| Parameter    | Prefix | Required | Constraints                                                                                                             | Result                         |
+|--------------|--------|----------|-------------------------------------------------------------------------------------------------------------------------|--------------------------------|
+| Index        | —      | Yes      | Must be a positive integer and within the bounds of the current list                                                    | Edits the position in the list |
+| Company Name | `n/`   | Optional | Printable English characters only (letters, digits, symbols).<br/> Starting / Ending / Duplicate spaces will be trimmed | Updated company name           |
+| Role         | `r/`   | Optional | Printable English characters only (letters, digits, symbols).<br/> Starting / Ending / Duplicate spaces will be trimmed | Updated job role               |
+| Date         | `d/`   | Optional | Must be a valid calendar date in `DD-MM-YYYY` format                                                                    | Updated application date       |
+| Status       | `s/`   | Optional | Must be `Offered`, `Pending`, or `Rejected` (case-insensitive)                                                          | Updated application status     |
+| Email        | `e/`   | Optional | Must follow email format, <br/>_Leave this blank to clear the field_                                                    | Updated email                  |
+| Website      | `w/`   | Optional | Must follow website format, <br/>_Leave this blank to clear the field_                                                  | Updated job link               |
+| Address      | `a/`   | Optional | See [Command Format Notes](#command-format-notes) for Special Characters. <br/>_Leave this blank to clear the field_    | Updated company location       |
+| Tag          | `t/`   | Optional | Alphanumeric only, no spaces, max 20 characters. <br/>_Leave this blank to clear the field_                             | Replaces all existing tags     |
 
 > ⚠ **Warning:** At least **ONE** field must be provided after `INDEX`. Entering `edit INDEX` by itself is invalid.
 
-> ⚠ **Warning:** Existing values will be **overwritten** by the input values. When editing tags, the existing tags of the application will be **replaced entirely** — editing tags is not cumulative
+> ⚠ **Warning:** Existing values will be **overwritten** by the input values. When editing tags, the existing tags of the application will be **replaced entirely** — editing tags is not cumulative.
 
 <br><br>
 #### Valid Examples:
