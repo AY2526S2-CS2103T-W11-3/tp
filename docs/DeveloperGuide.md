@@ -1180,7 +1180,7 @@ Use these test cases after ensuring that there are applications matching the rel
 This section documents known limitations in the current version and the planned improvements for future releases.
 
 1. **Support for Non-English characters in fields**
-   Currently, fields such as company name, role, and address only accept ASCII characters. A future enhancement is to allow input of non-English characters (e.g. Chinese, Japanese, Korean, accented Latin characters) across all text fields, to better support users managing international job applications.
+   Currently, fields such as company name, role, and address only accept keyboard characters. A future enhancement is to allow input of non-English characters (e.g. Chinese, Japanese, Korean, accented Latin characters) across all text fields, to better support users managing international job applications.
 
 2. **Support for additional date formats**
    Currently, the `d/` field only accepts dates in the `DD-MM-YYYY` format. A future enhancement is to also accept the following formats: `DDMMYYYY`, `YYYY-MM-DD`, and `YYYYMMDD`, so that users can enter dates in the format they are most comfortable with.
@@ -1192,4 +1192,4 @@ This section documents known limitations in the current version and the planned 
    Currently, if the `open` command is re-entered in edit mode for an application whose notes window is already open, any unsaved changes in the notes text area are overwritten with the previously saved content. A future enhancement is to preserve unsaved edits when the notes window is already open in edit mode for the same application, and only reset the text area when switching to a different application.
 
 5. **Support OR search for non-tag fields**
-   Currently, specifying the same field prefix multiple times in a `find` command (e.g. `n/Grab n/Nike`) does not search for either value — only one value is matched. A future enhancement is to support OR-based matching for non-tag fields, so that `n/Grab n/Nike` returns applications matching either "Grab" or "Nike" as the company name.
+   Currently, specifying the same field prefix multiple times in a `find` command (e.g. `n/Grab n/Nike`) does not search for either value — only the last keyword is matched. A future enhancement is to support OR-based matching for non-tag fields, so that `n/Grab n/Nike` returns applications matching either "Grab" or "Nike" as the company name.
