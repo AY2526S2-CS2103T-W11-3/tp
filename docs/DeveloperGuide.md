@@ -58,6 +58,7 @@ title: Developer Guide
     * [Viewing help](#viewing-help)
     * [Clearing all entries](#clearing-all-entries)
     * [Saving data](#saving-data)
+* [Appendix: Planned Enhancements](#appendix-planned-enhancements)
 
 
 ## **Acknowledgements**
@@ -1165,3 +1166,24 @@ Use these test cases after ensuring that there are applications matching the rel
     Expected:
    * The app starts normally.
    * Sample data is loaded.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Planned Enhancements**
+
+This section documents known limitations in the current version and the planned improvements for future releases.
+
+1. **Support for Non-English characters in fields**
+   Currently, fields such as company name, role, and address only accept ASCII characters. A future enhancement is to allow input of non-English characters (e.g. Chinese, Japanese, Korean, accented Latin characters) across all text fields, to better support users managing international job applications.
+
+2. **Support for additional date formats**
+   Currently, the `d/` field only accepts dates in the `DD-MM-YYYY` format. A future enhancement is to also accept the following formats: `DDMMYYYY`, `YYYY-MM-DD`, and `YYYYMMDD`, so that users can enter dates in the format they are most comfortable with.
+
+3. **Add confirmation prompt for the `clear` command**
+   Currently, the `clear` command deletes all applications immediately without any confirmation. A future enhancement is to show a confirmation prompt (e.g. asking the user to type `yes` or press a confirm key) before proceeding, to prevent users from accidentally erasing all their data.
+
+4. **Preserve unsaved notes edits when re-opening the same application**
+   Currently, if the `open` command is re-entered in edit mode for an application whose notes window is already open, any unsaved changes in the notes text area are overwritten with the previously saved content. A future enhancement is to preserve unsaved edits when the notes window is already open in edit mode for the same application, and only reset the text area when switching to a different application.
+
+5. **Support OR search for non-tag fields**
+   Currently, specifying the same field prefix multiple times in a `find` command (e.g. `n/Grab n/Nike`) does not search for either value — only one value is matched. A future enhancement is to support OR-based matching for non-tag fields, so that `n/Grab n/Nike` returns applications matching either "Grab" or "Nike" as the company name.
