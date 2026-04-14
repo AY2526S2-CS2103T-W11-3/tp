@@ -67,6 +67,12 @@ title: Developer Guide
 * JSON storage is implemented using [Jackson](https://github.com/FasterXML/jackson).
 * Testing uses [JUnit 5](https://junit.org/junit5/) and [TestFX](https://github.com/TestFX/TestFX).
 
+
+### AI Assistance 
+* Our team uses ChatGPT and Claude as a feedback tool to continuously review code quality.
+This included identifying typographical errors, suggesting improvements to coding conventions and best practices and generating common test scenarios to improve test coverage.
+All suggestions were reviewed, adapted, and refined manually before inclusion in the project.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
